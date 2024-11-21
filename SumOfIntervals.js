@@ -19,11 +19,12 @@ function simplifyIntervals(intervals) {
                 }
                 // Get rid of check range
                 intervals.splice(j, 1);
-                j -= 1;
+
                 // If it removes something behind i move i back 1
                 if (i > j && i > 0) {
                     i -= 1;
                 }
+                j = -1;
             }
 
             // if checkUpper is between the current lower and current upper
@@ -35,11 +36,12 @@ function simplifyIntervals(intervals) {
                 }
                 // Get rid of check range (j)
                 intervals.splice(j, 1);
-                j -= 1;
+
                 // If it removes something behind i move i back 1
                 if (i > j && i > 0) {
                     i -= 1;
                 }
+                j = -1;
             }
 
             // else if (checkLowerRange <= currentLowerRange && currentLowerRange <= checkUpperRange) {
